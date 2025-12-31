@@ -41,6 +41,16 @@ This repository mirrors production-quality frontend workflows, including:
 - Pre-commit hooks enforcing quality before commits
 - Dependabot for automated dependency monitoring
 
+  ## Security & Governance
+
+Security and governance are treated as first-class concerns:
+
+- CI workflows explicitly scope GITHUB_TOKEN permissions
+- Responsible disclosure documented in `SECURITY.md`
+- Contribution standards documented in `CONTRIBUTING.md`
+- Open-source licensing defined under the MIT License
+
+All automation adheres to the principle of least privilege.
 
 - CI Security Checklist
 
