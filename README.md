@@ -10,7 +10,11 @@
 
 # Help Desk Intake & Ticket Tracker
 
-A lightweight, browser-based IT help desk intake system built with HTML, CSS, and JavaScript.
+## Overview
+
+This project is a lightweight, browser-based help desk intake and ticket tracking system designed to demonstrate real-world IT support workflows, frontend quality practices, and CI/CD security hygiene.
+
+The application captures structured support requests, tracks ticket lifecycle states, and provides operational analytics through interactive dashboards. The repository intentionally emphasizes correctness, accessibility, and automation over framework complexity.
 
 ## Features
 - Ticket intake form
