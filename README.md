@@ -2,9 +2,8 @@
 ![Lint](https://github.com/<mr-adonis-jimenez>/<help-desk-intake>/actions/workflows/lint.yml/badge.svg)
 ![CI Matrix](https://github.com/<mr-adonis-jimenez>/<help-desk-intake>/actions/workflows/test-matrix.yml/badge.svg)
 ![Lighthouse](https://github.com/<mr-adonis-jimenez>/<help-desk-intake>/actions/workflows/lighthouse.yml/badge.svg)
+![CodeQL](https://github.com/<mr-adonis-jimenez>/<help-desk-intake>/actions/workflows/codeql.yml/badge.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![Lint](https://github.com/<mr-adonis-jimenez>/<hekp-desk-intake>/actions/workflows/lint.yml/badge.svg)
-![Lighthouse](https://github.com/<mr-adonis-jimenez>/<hekp-desk-intake>/actions/workflows/lighthouse.yml/badge.svg)
 
 ![Lighthouse](https://img.shields.io/badge/Lighthouse-Audited-blue)
 
