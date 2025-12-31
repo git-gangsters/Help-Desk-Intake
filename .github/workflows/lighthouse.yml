@@ -1,11 +1,13 @@
 name: Lighthouse CI
 
 on:
-permissions:
-  contents: read
   push:
     branches: ["main"]
   workflow_dispatch:
+
+  permissions:
+  contents: read
+
 
 jobs:
   lighthouse:
