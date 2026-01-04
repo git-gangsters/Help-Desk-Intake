@@ -8,3 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo "Static project – no build required"
+
+- name: Claude Code Action Official
+- uses: anthropics/claude-code-action@v1
