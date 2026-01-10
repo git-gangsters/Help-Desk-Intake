@@ -49,15 +49,15 @@ th {
   background: #eaeaea;
 }
 
-.priority-High {
+.priority-high {
   color: red;
   font-weight: bold;
 }
 
-.priority-Medium {
+.priority-medium {
   color: orange;
 }
 
-.priority-Low {
+.priority-low {
   color: green;
 }

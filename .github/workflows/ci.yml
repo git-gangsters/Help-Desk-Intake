@@ -3,11 +3,20 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  lint:
+  check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "Static project – no build required"
+      - name: Checkout
+        uses: actions/checkout@v4
 
-- name: Claude Code Action Official
-- uses: anthropics/claude-code-action@v1
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint (CI)
+        run: npm run lint

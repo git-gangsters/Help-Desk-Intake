@@ -9,11 +9,15 @@
 <body>
   <h1>Help Desk Intake</h1>
 
-  <form id="ticketForm">
-    <input type="text" id="name" placeholder="Name" required />
-    <input type="email" id="email" placeholder="Email" required />
+  <form id="ticketForm" novalidate>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" autocomplete="name" required />
 
-    <select id="category" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" autocomplete="email" required />
+
+    <label for="category">Issue Category</label>
+    <select id="category" name="category" required>
       <option value="">Issue Category</option>
       <option value="Hardware">Hardware</option>
       <option value="Software">Software</option>
@@ -21,14 +25,16 @@
       <option value="Access">Access / Login</option>
     </select>
 
-    <select id="priority" required>
+    <label for="priority">Priority</label>
+    <select id="priority" name="priority" required>
       <option value="">Priority</option>
       <option value="Low">Low</option>
       <option value="Medium">Medium</option>
       <option value="High">High</option>
     </select>
 
-    <textarea id="description" placeholder="Describe the issue..." required></textarea>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
 
     <button type="submit">Submit Ticket</button>
   </form>
@@ -36,7 +42,7 @@
   <hr />
 
   <h2>Ticket Dashboard</h2>
-  <button onclick="exportCSV()">Export CSV</button>
+  <button type="button" id="exportCsvBtn">Export CSV</button>
 
   <table id="ticketTable">
     <thead>

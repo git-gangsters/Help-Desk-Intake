@@ -1,0 +1,18 @@
+{
+  "name": "help-desk-intake",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lightweight, browser-based help desk intake and ticket tracker (static HTML/CSS/JS).",
+  "scripts": {
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:html": "htmlhint \"./*.html\"",
+    "lint:css": "stylelint \"./*.css\"",
+    "lint:js": "eslint --max-warnings=0 \"./*.js\""
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}

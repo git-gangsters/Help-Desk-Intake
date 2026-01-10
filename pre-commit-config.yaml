@@ -7,20 +7,29 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
 
-  - repo: https://github.com/htmlhint/HTMLHint
-    rev: v1.1.4
+  - repo: local
     hooks:
       - id: htmlhint
+        name: htmlhint
+        entry: htmlhint
+        language: node
+        additional_dependencies:
+          - htmlhint@1.1.4
         files: \.html$
 
-  - repo: https://github.com/stylelint/stylelint
-    rev: 15.11.0
-    hooks:
       - id: stylelint
+        name: stylelint
+        entry: stylelint
+        language: node
+        additional_dependencies:
+          - stylelint@16.14.1
+          - stylelint-config-standard@36.0.1
         files: \.css$
 
-  - repo: https://github.com/eslint/eslint
-    rev: v8.57.0
-    hooks:
       - id: eslint
+        name: eslint
+        entry: eslint --max-warnings=0
+        language: node
+        additional_dependencies:
+          - eslint@8.57.1
         files: \.js$
