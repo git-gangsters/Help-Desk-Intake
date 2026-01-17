@@ -23,5 +23,3 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
-        - name: Checkout
-  uses: actions/checkout@v6.0.1
