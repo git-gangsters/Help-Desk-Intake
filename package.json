@@ -10,7 +10,7 @@
     "lint:js": "eslint --max-warnings=0 \"./*.js\""
   },
   "devDependencies": {
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "htmlhint": "^1.1.4",
     "stylelint": "^17.1.1",
     "stylelint-config-standard": "^39.0.1"
