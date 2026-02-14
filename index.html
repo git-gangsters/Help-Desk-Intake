@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Browser-based help desk ticket intake and tracking system" />
+  <meta name="theme-color" content="#1f6feb" />
   <title>Help Desk Intake</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Help Desk Intake</h1>
+  <div class="header">
+    <h1>Help Desk Intake</h1>
+    <button type="button" id="theme-toggle" aria-label="Toggle dark mode">Dark Mode</button>
+  </div>
 
-  <form id="ticketForm" novalidate>
+  <form id="ticket-form" novalidate>
     <label for="name">Name</label>
     <input type="text" id="name" name="name" autocomplete="name" required />
 
@@ -41,10 +46,27 @@
 
   <hr />
 
-  <h2>Ticket Dashboard</h2>
-  <button type="button" id="exportCsvBtn">Export CSV</button>
+  <div class="dashboard-header">
+    <h2>Ticket Dashboard</h2>
+    <div class="dashboard-controls">
+      <input type="search" id="search-input" placeholder="Search tickets..." aria-label="Search tickets" />
+      <select id="filter-status" aria-label="Filter by status">
+        <option value="">All Statuses</option>
+        <option value="Open">Open</option>
+        <option value="Closed">Closed</option>
+      </select>
+      <select id="filter-priority" aria-label="Filter by priority">
+        <option value="">All Priorities</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <button type="button" id="export-csv-btn">Export CSV</button>
+    </div>
+  </div>
+  <div id="ticket-count" class="ticket-count"></div>
 
-  <table id="ticketTable">
+  <table id="ticket-table">
     <thead>
       <tr>
         <th>Date</th>

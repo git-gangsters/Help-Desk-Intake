@@ -1,63 +1,297 @@
+/* === Design Tokens === */
+:root {
+  --color-primary: #1f6feb;
+  --color-primary-hover: #1557b0;
+  --color-high: #dc3545;
+  --color-medium: #e67e00;
+  --color-low: #28a745;
+  --color-bg: #f4f6f8;
+  --color-surface: #fff;
+  --color-border: #ccc;
+  --color-text: #333;
+  --color-text-muted: #666;
+  --color-th-bg: #eaeaea;
+  --color-danger: #dc3545;
+  --color-danger-hover: #b02a37;
+  --spacing-sm: 8px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --radius: 6px;
+}
+
+[data-theme="dark"] {
+  --color-primary: #4a9af5;
+  --color-primary-hover: #6db3ff;
+  --color-high: #ff6b6b;
+  --color-medium: #ffb347;
+  --color-low: #51cf66;
+  --color-bg: #1a1a2e;
+  --color-surface: #16213e;
+  --color-border: #3a3a5c;
+  --color-text: #e0e0e0;
+  --color-text-muted: #a0a0a0;
+  --color-th-bg: #1e2a47;
+  --color-danger: #ff6b6b;
+  --color-danger-hover: #f44;
+}
+
+/* === Base === */
 body {
   font-family: Arial, sans-serif;
-  background: #f4f6f8;
+  background: var(--color-bg);
+  color: var(--color-text);
   margin: 0;
-  padding: 20px;
+  padding: var(--spacing-lg);
+  transition: background 0.3s, color 0.3s;
 }
 
-h1, h2 {
-  color: #333;
+h1,
+h2 {
+  color: var(--color-text);
 }
 
+/* === Header === */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.header h1 {
+  margin: 0;
+}
+
+#theme-toggle {
+  width: auto;
+  padding: var(--spacing-sm) 12px;
+  font-size: 0.85em;
+}
+
+/* === Form === */
 form {
-  background: #fff;
-  padding: 15px;
-  border-radius: 6px;
+  background: var(--color-surface);
+  padding: var(--spacing-md);
+  border-radius: var(--radius);
   max-width: 500px;
+  border: 1px solid var(--color-border);
 }
 
-input, select, textarea, button {
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+input,
+select,
+textarea {
   width: 100%;
   margin-bottom: 10px;
-  padding: 8px;
+  padding: var(--spacing-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.95em;
 }
 
 button {
-  background: #1f6feb;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: var(--spacing-sm);
+  background: var(--color-primary);
   color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 0.95em;
 }
 
 button:hover {
-  background: #1557b0;
+  background: var(--color-primary-hover);
 }
 
+/* === Focus States === */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* === Dashboard Header === */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.dashboard-header h2 {
+  margin: 0;
+}
+
+.dashboard-controls {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#search-input {
+  width: 220px;
+  margin-bottom: 0;
+}
+
+#filter-status,
+#filter-priority {
+  width: auto;
+  margin-bottom: 0;
+}
+
+#export-csv-btn {
+  width: auto;
+  padding: var(--spacing-sm) 12px;
+  margin-bottom: 0;
+}
+
+.ticket-count {
+  font-size: 0.85em;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* === Table === */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin-top: var(--spacing-md);
+  background: var(--color-surface);
 }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 8px;
+th,
+td {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-sm);
   text-align: left;
 }
 
 th {
-  background: #eaeaea;
+  background: var(--color-th-bg);
 }
 
 .priority-high {
-  color: red;
+  color: var(--color-high);
   font-weight: bold;
 }
 
 .priority-medium {
-  color: orange;
+  color: var(--color-medium);
 }
 
 .priority-low {
-  color: green;
+  color: var(--color-low);
+}
+
+/* === Action Buttons === */
+.btn-toggle {
+  width: auto;
+  padding: 4px 10px;
+  margin: 0 2px;
+  font-size: 0.85em;
+}
+
+.btn-delete {
+  width: auto;
+  padding: 4px 10px;
+  margin: 0 2px;
+  font-size: 0.85em;
+  background: var(--color-danger);
+}
+
+.btn-delete:hover {
+  background: var(--color-danger-hover);
+}
+
+/* === Status Badges === */
+.status-open {
+  color: var(--color-low);
+  font-weight: bold;
+}
+
+.status-closed {
+  color: var(--color-text-muted);
+}
+
+/* === Empty State === */
+.empty-state {
+  text-align: center;
+  padding: 40px var(--spacing-lg);
+  color: var(--color-text-muted);
+}
+
+.empty-state p {
+  margin: var(--spacing-sm) 0;
+  font-size: 0.95em;
+}
+
+/* === Responsive === */
+@media (width <= 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-controls {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #search-input,
+  #filter-status,
+  #filter-priority,
+  #export-csv-btn {
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.85em;
+  }
+
+  th,
+  td {
+    padding: 6px;
+  }
+
+  form {
+    max-width: 100%;
+  }
+}
+
+@media (width <= 480px) {
+  table {
+    font-size: 0.75em;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 6px;
+  }
 }
